@@ -8,7 +8,7 @@ button {border:0;background-color:transparent;cursor:pointer}
 table {border-collapse:collapse;border-spacing:0}
 body {-webkit-text-size-adjust:none}
 body {background:var(--baseBackground)}
-a {color:#333}
+a {color:#fff}
 a, a:active, a:hover {text-decoration:none}
 address, caption, cite, code, dfn, em, var {font-style:normal;font-weight:400}
 figure{margin: 0;}

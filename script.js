@@ -20,30 +20,40 @@ $(window).on("wheel", function(e) {
 // 배경
 
 
+const sky = document.querySelector(".sky");
+
+// 브라우저 창 크기에 따른 별 생성
 window.onresize = () => {
-    makeStars();
+  makeStars();
 }
 
 const makeStars = () => {
-    const $sky = document.querySelector(".sky");
-    
-    const maxSize = Math.max(window.innerWidth,window.innerHeight);
+  // 브라우저 가장 큰 크기
+  const maxSize = Math.max(window.innerWidth, window.innerHeight)
 
-    const getRandomX = () => Math.random() * maxSize;
+  // 랜덤한 X 위치 값
+  const getRandomX = () => Math.random() * maxSize;
 
-    const getRandomY = () => Math.random() * maxSize;
+  // 랜덤한 Y 위치 값
+  const getRandomY = () => Math.random() * maxSize;
 
-    const randomRadius = () => Math.random() * 0.7 + 0.6;
-
-    const _size = Math.floor(maxSize / 2);
+  // 랜덤한 크기 (circle는 반지름이 크기)
+  const randomRadius = () =>  Math.random() * 0.7 + 0.6;
   
-  const htmlDummy = new Array(_size).fill().map((_, i) => {
+  // 임의의 값
+  const size = Math.floor(maxSize / 2);
+  
+  const htmlDummy = new Array(size).fill().map((_, i) => {
     return  `<circle class='star'
-      cx=${getRandomX()}
-      cy=${getRandomY()}
-      r=${randomRadius()}
-      className="star" />`
+        cx=${getRandomX()}
+        cy=${getRandomY()}
+        r=${randomRadius()}
+        className="star" />`
   }).join('');
   
-  $sky.innerHTML = htmlDummy;
+  sky.innerHTML = htmlDummy;
+}
+
+window.onload = () => {
+  makeStars();
 }
