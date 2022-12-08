@@ -1,3 +1,4 @@
+@import "reset.css";
 html {
   overflow: hidden;
 }
@@ -9,6 +10,34 @@ html, body {
   margin: 0;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav {
+  flex: 1;
+}
+header h1 {
+  width: 200px;
+  text-align: center;
+}
+
+.header ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+}
+.header ul li {
+  width: 25%;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .section {
   width: 100%;
   height: 100%;
@@ -16,12 +45,36 @@ html, body {
 }
 
 #section1 {
-  background-color: aliceblue;
+  position: relative;
+  background: linear-gradient(#111, #0e0f19);
+  overflow: hidden;
 }
 #section1 .section1_detail {
   color: #ccc;
 }
+#section1 .sky {
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: moveStar 240s linear infinite;
+  position: absolute;
+}
+#section1 .sky .star {
+  fill: #fff;
+  stroke: none;
+  stroke-width: 0;
+}
 
+@keyframes moveStar {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
 #section2 {
   background-color: lightpink;
 }
