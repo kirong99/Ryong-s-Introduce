@@ -57,3 +57,16 @@ const makeStars = () => {
 window.onload = () => {
   makeStars();
 }
+
+//헤더 스크롤 변경
+$(function(){
+    $(document).on('scroll',function(){
+        if($(window).scrollTop() > 700){
+            $("#header").removeClass("deactive");
+            $("#header").addClass("active");
+        }else{
+            $("#header").removeClass("active");
+            $("#header").addClass("deactive");
+        }
+    })
+});
